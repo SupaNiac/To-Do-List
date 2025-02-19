@@ -11,16 +11,24 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Task> taskList = new ArrayList<>();
-		int n = 100;
+		String INPUT = "";
 		
-		for (int i=0; i<n; i++) {
-		System.out.print("Type a task: ");
-		String task1 = sc.next();
-		Task task = new Task(task1);
-		taskList.add(task);
-		System.out.println(task);
+		
+		while (!INPUT.equalsIgnoreCase("Quit")) {
+		System.out.print("Type a task (or 'Quit to exit): ");
+		INPUT = sc.nextLine();
+		
+		if (!INPUT.equalsIgnoreCase("Quit")) {
+			Task task = new Task(INPUT);
+			taskList.add(task);
+			System.out.println("Task added: " + task);
+		}
 		}
 		
+		System.out.println("\n Task list: ");
+			for (Task t : taskList) {
+				System.out.println(t);
+			}
 		
 		sc.close();
 	}
