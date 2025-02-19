@@ -9,13 +9,17 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		Task task = new Task();
 		Scanner sc = new Scanner(System.in);
-		ArrayList<Task> task1 = new ArrayList<>();
+		ArrayList<Task> taskList = new ArrayList<>();
+		int n = 100;
 		
-		System.out.println("Add a task: ");
-		task.setTask(sc.next());
-		System.out.println(task.getTask());
+		for (int i=0; i<n; i++) {
+		System.out.print("Type a task: ");
+		String task1 = sc.next();
+		Task task = new Task(task1);
+		taskList.add(task);
+		System.out.println(task);
+		}
 		
 		
 		sc.close();

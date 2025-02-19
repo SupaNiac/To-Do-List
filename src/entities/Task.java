@@ -2,23 +2,23 @@ package entities;
 
 public class Task {
 	
-		private String task;
+		private String description;
 		
-		public Task(String task) {
-			this.task = task;
+		public Task(String description) {
+			this.description = description;
 		}
 
-		public String getTask() {
-			return task;
+		public String getDescription() {
+			return description;
 		}
 
-		public void setTask(String task) {
-			this.task = task;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 		
 		@Override
 		public String toString() {
-			return "Task: " + task;
+			return "Task: " + description;
 		}
 
 	}
