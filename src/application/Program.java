@@ -30,10 +30,13 @@ public class Program {
 				System.out.println(t);
 			}
 			
+			System.out.println();
 			System.out.println("Do you want to add more tasks or remove a task? [A/R]");
 			char ra = sc.next().charAt(0);
+			sc.nextLine();
 			
-			if (ra == 'a') {
+			if (Character.toUpperCase(ra) == 'A') {
+				INPUT = "";
 				while (!INPUT.equalsIgnoreCase("Quit")) {
 					System.out.print("Type a task (or 'Quit to exit): ");
 					INPUT = sc.nextLine();
@@ -45,7 +48,7 @@ public class Program {
 					}
 					}
 			}
-			else if (ra == 'r') {
+			else if (Character.toUpperCase(ra) == 'R') {
 				
 				System.out.println("Your tasks: ");
 				for (int i = 0; i < taskList.size(); i++) {
@@ -53,7 +56,15 @@ public class Program {
 				}	
 				System.out.print("Type the number of the task you want to remove: ");
 				int number = sc.nextInt();
-			}
+				
+				if (number > 0 && number <= taskList.size()) {
+					taskList.remove(number - 1);
+					System.out.println("Task removed!");
+				}
+				else {
+					System.out.println("Invalid number!");
+					}
+				}
 					
 		
 		sc.close();
